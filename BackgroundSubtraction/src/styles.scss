@@ -1,0 +1,53 @@
+html, * { margin: 0 }
+
+body {
+	padding-top: 20px;
+  	padding-bottom: 10px;
+} 
+
+img {
+	display: none;
+}
+
+.logo {
+  width: 40px;
+  margin-top: -8px;
+}
+
+#canvas-container {
+    text-align: center;
+}
+
+canvas {
+  margin: 0 auto !important;
+  position: relative;
+  z-index: 1;
+}
+
+video { 
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.page-header {
+  padding: 0 !important;
+  margin-top: 30px !important;
+  text-align: center;
+}
+
+.actions {
+  text-align: center;
+
+  label.radio-inline {
+  	vertical-align: middle;
+
+  	input {
+  		margin-top: 0;
+  	}
+  }
+}
+
+#github {
+  text-align: center;
+}

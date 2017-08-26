@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Background Substraction</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  </head>
+  <body>
+
+      <div class="container">
+
+        <div class="page-header">
+            <h1>Background Subtraction</h1>
+            <h4>Based on <a href="https://kylemcdonald.github.io/cv-examples">Kyle McDonald's OpenCV examples</a></h4>                
+            <p class="lead">
+              <p>Detect presence in video. Step outside of the video, press "Capture Background", and step back in. Try different thresholding methods and levels.</p>
+            </p>
+        </div>
+
+        <div class="actions">
+            
+            <div class="row">
+                
+                <div class="col-md-12">
+                
+                    <div class="form-group">
+                        <label>Output mode:&nbsp;</label>
+                        <label class="radio-inline"><input type="radio" name="thresholdType" value="color" checked>Color</label>
+                        <label class="radio-inline"><input type="radio" name="thresholdType" value="bn">B/N</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Comparison method:&nbsp;</label>
+                        <label class="radio-inline"><input type="radio" name="comparisonMethod" value="rgb" checked>RGB</label>
+                        <label class="radio-inline"><input type="radio" name="comparisonMethod" value="euclidean" checked>Euclidean</label>
+                        <label class="radio-inline"><input type="radio" name="comparisonMethod" value="hsl">HSL</label>
+                        <label class="radio-inline"><input type="radio" name="comparisonMethod" value="hsv">HSV</label>
+                        <label class="radio-inline control-label"><input type="radio" name="comparisonMethod" value="lab">LAB</label>
+                    </div>
+                  
+                </div>
+
+                <div class="col-md-offset-4 col-md-4">
+                    <label>Threshold: <span id="displayAmount"></span></label> 
+                    <input type="range" id="thresholdAmount" value="50" />
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <div id="canvas-container"></div>
+
+        <br/>
+
+        <div class="bottom-actions text-center">
+            <button class="btn btn-lg btn-success btn-reset">Capture Background</button>      
+            <button class="btn btn-lg btn-success btn-save">Save</button>
+            <button class="btn btn-lg btn-warning btn-random-bg">Random Image</button>
+        </div>
+
+        <br />
+
+        <div id="github">
+            <img alt="" class="avatar" data-canonical-src="https://1.gravatar.com/avatar/de7a9355aac0c4bfe08e04e7fcb0713f?d=https%3A%2F%2Fassets-cdn.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&amp;r=x&amp;s=140" height="20" src="https://camo.githubusercontent.com/0b39a2fc186f885993aa129d07910b1621d57733/68747470733a2f2f312e67726176617461722e636f6d2f6176617461722f64653761393335356161633063346266653038653034653766636230373133663f643d68747470732533412532462532466173736574732d63646e2e6769746875622e636f6d253246696d6167657325324667726176617461727325324667726176617461722d757365722d3432302e706e6726723d7826733d313430" width="20">
+            <a href="https://github.com/libasoles/p5-sketches-lab"> Source code</a>
+        </div>
+    </div><!-- /.container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+  </body>
+</html>

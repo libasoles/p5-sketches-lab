@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+  	"allowJs": true,
+    "target": "es5",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "app/*": ["app/*"],
+      "classes/*": ["app/classes/*"],
+      "interfaces/*": ["app/interfaces/*"],
+      "characters/*": ["app/classes/characters/*"],
+      "layout/*": ["app/classes/layout/*"],
+      "views/*": ["app/views/*"]
+    }
+  }
+}
